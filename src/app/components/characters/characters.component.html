@@ -1,0 +1,5 @@
+<div class="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 items-stretch gap-20 w-[90%] mx-auto">
+  @for (character of characters; track character.id){
+    <app-character-item [character]="character" />
+  }
+</div>

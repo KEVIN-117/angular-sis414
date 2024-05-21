@@ -6,9 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MaskPipePipe implements PipeTransform {
 
-  transform(value: string, visibleChars: number = 4): string {
+  transform(value: string, visibleChars: number = 4, makeString: string = '*'): string {
     if (!value) return value
-    const maskedSection = '*'.repeat(value.length - visibleChars)
+    const maskedSection = makeString.repeat(value.length - visibleChars)
     return maskedSection + value.slice(-visibleChars)
   }
 
