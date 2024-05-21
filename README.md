@@ -1,27 +1,5 @@
 # AngularSis414Curso
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use 
-
-`ng generate directive` for generate a new directive
-`ng generate pipe` for generate a new pipe
-`ng generate service` for generate a new service
-`ng generate class` for generate a new class
-`ng generate guard` for generate a new guard
-`ng generate interface` for generate a new interface
-`ng generate enum` for generate a new enum
-`ng generate module` for generate a new module
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
 # Temario
 
 ## Fase 1: Fundamentos de Angular
