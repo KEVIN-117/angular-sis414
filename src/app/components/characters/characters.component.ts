@@ -13,4 +13,8 @@ import {CharacterItemComponent} from "../character-item/character-item.component
 })
 export class CharactersComponent {
   @Input() characters!: CharacterDto[];
+
+  acceptMessage(message: CharacterDto) {
+    console.log(message);
+  }
 }

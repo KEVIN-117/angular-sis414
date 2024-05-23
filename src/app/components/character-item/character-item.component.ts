@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, output} from '@angular/core';
 import {CharacterDto} from "../../types";
+import { EventEmitter } from 'node:stream';
 
 @Component({
   selector: 'app-character-item',
@@ -10,6 +11,11 @@ import {CharacterDto} from "../../types";
 })
 export class CharacterItemComponent {
     @Input() character!: CharacterDto;
-
+    //@Output() characterSelected = new EventEmitter<string | null>();
+    characterSelected = output<CharacterDto>();
     data = ["esto ", "es", "un", "dato", "de", "prueba"]
+
+    sendData(){
+      this.characterSelected.emit(this.character);
+    }
 }
