@@ -1,0 +1,9 @@
+<div class="grid grid-cols-3 gap-10 place-content-center">
+  @for (character of characters; track character.id) {
+      <app-character-item [character]="character" />
+  }@empty {
+    <p>
+      No characters found
+    </p>
+  }
+</div>
