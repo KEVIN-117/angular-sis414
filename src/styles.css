@@ -5,3 +5,10 @@
 :root{
   color-scheme: light dark;
 }
+*{
+  box-sizing: border-box;
+
+}
+body {
+  background-color: #080812;
+}
