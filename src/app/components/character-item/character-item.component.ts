@@ -10,5 +10,4 @@ import { CharacterDto } from '../../types';
 })
 export class CharacterItemComponent {
   @Input() character!: CharacterDto;
-
 }

@@ -10,7 +10,6 @@ export class DragonballService {
 
   constructor(private http: HttpClient) { }
 
-
   getCharacters(): Observable<ResponseDto> {
     return this.http.get<ResponseDto>('https://dragonball-api.com/api/characters')
   }
