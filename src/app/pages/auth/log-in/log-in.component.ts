@@ -3,8 +3,8 @@ import {ButtonsComponent} from "../components/buttons/buttons.component";
 import {RouterLink} from "@angular/router";
 import {ContainerComponent} from "../components/container/container.component";
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { FormsModule, ReactiveFormsModule } from "@angular/forms"
-import { log } from 'console';
+import { ReactiveFormsModule } from "@angular/forms"
+
 @Component({
   selector: 'app-log-in',
   standalone: true,
