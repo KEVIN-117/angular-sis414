@@ -25,13 +25,32 @@ This is a simple example of how to authenticate with AngularJS using Firebase Au
 ## Screenshots
 
 ### Sign In Page
-![img.png](img.png)
+![img_1.png](img_1.png)
 
-### Palette
+### Register Page
 
-![palette.png](palette.png)
+![img_2.png](img_2.png)
+
+### Dashboard Page
+
+![img_3.png](img_3.png)
+
+### Storage Page
+
+![img_4.png](img_4.png)
+
+### Profile Page
+
+- google account
+![img_5.png](img_5.png)
+
+- github account
+
+![img_6.png](img_6.png)
+
+- email and password account
+
+![img_7.png](img_7.png)
 
 
-## URL to the Application
 
-https://todo-web-app-79f03.firebaseapp.com/__/auth/handler
