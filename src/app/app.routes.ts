@@ -1,19 +1,59 @@
 import { Routes } from '@angular/router';
-import { LogInComponent } from './pages/auth/log-in/log-in.component';
-import { SiqnUpComponent } from './pages/auth/siqn-up/siqn-up.component';
-import { MainComponent } from './shared/main/main.component';
+import MainComponent  from './shared/main/main.component';
+import {HomeComponent} from "./pages/home/home.component";
 
 export const routes: Routes = [
   {
     path: '',
-    component: MainComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        loadComponent: ()=> import('./shared/main/main.component')
+      },
+      {
+        path: 'gallery',
+        loadComponent: ()=> import('./pages/gallery/gallery.component')
+      },
+      {
+        path: 'auth',
+        children: [
+          {
+            path: 'log-in',
+            loadComponent: ()=> import('./pages/auth/log-in/log-in.component')
+          },
+          {
+            path: 'sign-up',
+            loadComponent: ()=> import('./pages/auth/siqn-up/siqn-up.component')
+          }
+        ]
+      }
+    ]
   },
   {
-    path: 'login',
-    component: LogInComponent
+    path: 'dashboard',
+    loadComponent: ()=> import('./pages/dashboard/dashboard.component'),
+    children: [
+      {
+        path: '',
+        component: MainComponent
+      },
+      {
+        path: 'storage',
+        loadComponent: ()=> import('./pages/dashboard/storage/storage.component')
+      },
+      {
+        path: 'profile',
+        loadComponent: ()=> import('./pages/dashboard/profile/profile.component')
+      },
+      {
+        path: 'settings',
+        loadComponent: ()=> import('./pages/dashboard/settings/settings.component')
+      },
+      {
+        path: 'gallery',
+        loadComponent: ()=> import('./pages/gallery/gallery.component')
+      },
+    ]
   },
-  {
-    path: 'sign-up',
-    component: SiqnUpComponent
-  }
 ];

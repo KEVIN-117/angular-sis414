@@ -17,7 +17,7 @@ import { ReactiveFormsModule } from "@angular/forms"
   templateUrl: './log-in.component.html',
   styleUrl: './log-in.component.css'
 })
-export class LogInComponent {
+export default class LogInComponent {
   formControl = new FormGroup({
     email: new FormControl('',[
       Validators.required,

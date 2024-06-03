@@ -12,6 +12,6 @@ import {ContainerComponent} from "../components/container/container.component";
   templateUrl: './siqn-up.component.html',
   styleUrl: './siqn-up.component.css'
 })
-export class SiqnUpComponent {
+export default class SiqnUpComponent {
 
 }
