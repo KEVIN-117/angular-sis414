@@ -18,7 +18,7 @@ export const routes: Routes = [
       },
       {
         path: 'auth',
-        canDeactivate: [authGuardGuard],
+        canActivate: [publicGuardGuard],
         children: [
           {
             path: 'log-in',
@@ -34,6 +34,7 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [authGuardGuard],
     loadComponent: ()=> import('./pages/dashboard/dashboard.component'),
     children: [
       {
@@ -57,6 +58,6 @@ export const routes: Routes = [
         loadComponent: ()=> import('./pages/gallery/gallery.component')
       },
     ],
-    canActivate: [publicGuardGuard]
+
   },
 ];
