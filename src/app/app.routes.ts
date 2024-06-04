@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import MainComponent  from './shared/main/main.component';
+import { MainComponent }  from './pages/dashboard/main/main.component';
 import {HomeComponent} from "./pages/home/home.component";
+import { publicGuardGuard, authGuardGuard } from "./core/guards/auth-guard.guard"
 
 export const routes: Routes = [
   {
@@ -17,6 +18,7 @@ export const routes: Routes = [
       },
       {
         path: 'auth',
+        canDeactivate: [authGuardGuard],
         children: [
           {
             path: 'log-in',
@@ -54,6 +56,7 @@ export const routes: Routes = [
         path: 'gallery',
         loadComponent: ()=> import('./pages/gallery/gallery.component')
       },
-    ]
+    ],
+    canActivate: [publicGuardGuard]
   },
 ];

@@ -53,4 +53,29 @@ This is a simple example of how to authenticate with AngularJS using Firebase Au
 ![img_7.png](src/assets/img_7.png)
 
 
+```js
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCO1JxbCSZE4YZA2YphF4HjJzhJX-X-N0Q",
+  authDomain: "clase-1-angular-auth.firebaseapp.com",
+  projectId: "clase-1-angular-auth",
+  storageBucket: "clase-1-angular-auth.appspot.com",
+  messagingSenderId: "270409596632",
+  appId: "1:270409596632:web:a9d42e8b95dc7e940b21ad"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+```
+
+
+- fake password
+  z2g@348xF5Bi$s
+  $V#uo^!YEa!wv2
+  @T4obBRdD*SU3t
 

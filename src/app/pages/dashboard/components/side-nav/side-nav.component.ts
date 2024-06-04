@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {NavItemDto} from "../../../../../types";
 import {NavContainerComponent} from "./nav-container/nav-container.component";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
+import {AuthService} from "../../../../core/services/auth.service";
 @Component({
   selector: 'app-side-nav',
   standalone: true,
@@ -13,6 +14,9 @@ import {RouterLink} from "@angular/router";
   styleUrl: './side-nav.component.css'
 })
 export class SideNavComponent {
+
+  private readonly authService: AuthService = inject(AuthService)
+  private readonly router = inject(Router)
   navItems: NavItemDto[] = [
     {
       label: 'Dashboard',
@@ -55,4 +59,9 @@ export class SideNavComponent {
       path: '/dashboard/settings'
     }
   ]
+
+  async logout() {
+    await this.authService.logOut()
+    await this.router.navigateByUrl('/auth/log-in')
+  }
 }

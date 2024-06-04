@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {ButtonsComponent} from "../components/buttons/buttons.component";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {ContainerComponent} from "../components/container/container.component";
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { ReactiveFormsModule } from "@angular/forms"
+import {Credentials} from "../../../../types";
+import {AuthService} from "../../../core/services/auth.service";
 
 @Component({
   selector: 'app-log-in',
@@ -18,6 +20,8 @@ import { ReactiveFormsModule } from "@angular/forms"
   styleUrl: './log-in.component.css'
 })
 export default class LogInComponent {
+  private readonly authService: AuthService = inject(AuthService)
+  private readonly router = inject(Router)
   formControl = new FormGroup({
     email: new FormControl('',[
       Validators.required,
@@ -29,8 +33,15 @@ export default class LogInComponent {
     ])
   })
 
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.formControl.value);
+  async onSubmit() {
+    try {
+      const res = await this.authService.singIn(this.formControl.value as Credentials)
+      if (res){
+        alert(`Welcome ${res.user.email}`)
+        await this.router.navigateByUrl('/dashboard')
+      }
+    }catch (e){
+      console.log(e)
+    }
   }
 }
