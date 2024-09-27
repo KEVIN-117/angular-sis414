@@ -1,5 +1,3 @@
-
-
 export const environment = {
   firebase: {
     projectId:"clase-1-angular-auth",
